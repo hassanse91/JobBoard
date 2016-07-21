@@ -1,0 +1,11 @@
+#jobs
+	.job
+		%h2= @job.title
+		%p= @job.company
+		%button.btn.btn-default= link_to "Visite it", url_with_protocol(@job.url), :target => '_blank'
+	
+	#links
+		= link_to "Home", root_path, class: "btn btn-sm btn-default"
+		- if @job.user == current_user
+			= link_to "Edit", edit_job_path(@job), class: "btn btn-sm btn-default"
+			= link_to "delete", job_path(@job), method: :delete, data: {confirm: 'Are you sure ?'}, class: "btn btn-sm btn-default"

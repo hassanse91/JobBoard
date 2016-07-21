@@ -1,0 +1,7 @@
+= simple_form_for(@job, html: { class: 'form-horizontal'}) do |f|
+	= f.collection_select :category_id, Category.all, :id, :name, {promt: "choose a category"}, input_html: { class: "form-toggle"}
+	= f.input :title, label: "Job title",  input_html: { class: "form-control"}
+	= f.input :description, label: "description",  input_html: { class: "form-control"}
+	= f.input :company, label: "Your company",  input_html: { class: "form-control"}
+	= f.input :url, label: "Link to job",  input_html: { class: "form-control"}
+	= f.button :submit
